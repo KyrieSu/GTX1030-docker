@@ -14,7 +14,7 @@ RUN apt-get update && \
     # apt install --no-install-recommends -y nvidia-390 nvidia-390-dev libcuda1-390 && \
     wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/$cuda && \
     chmod +x $cuda && \
-    $cuda --silent --toolkit --samples && \
+    ./$cuda --silent --toolkit --samples && \
     echo "/usr/local/cuda-8.0/lib64" >> /etc/ld.so.conf && \
     echo "export PATH=$PATH:/usr/local/cuda-8.0/bin" >> ~/.bashrc && \
     wget http://developer.download.nvidia.com/compute/redist/cudnn/v6.0/$cudnn && \
