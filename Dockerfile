@@ -10,7 +10,8 @@ RUN apt-get update && \
     add-apt-repository -y ppa:graphics-drivers/ppa && \
     apt-get update && \
     apt-get -y upgrade && \
-    echo "83\n1\n" | apt install --no-install-recommends -y nvidia-390 nvidia-390-dev libcuda1-390 && \
+    DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends -y nvidia-390 nvidia-390-dev libcuda1-390
+    # apt install --no-install-recommends -y nvidia-390 nvidia-390-dev libcuda1-390 && \
     wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/$cuda && \
     chmod +x $cuda && \
     $cuda --silent --toolkit --samples && \
