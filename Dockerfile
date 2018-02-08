@@ -30,7 +30,6 @@ RUN apt-get update && \
     pip3 install --upgrade pip && \
     pip3 install tensorflow_gpu==1.4.1 && \
     pip3 install keras==2.1.2 && \
-    pip3 install opencv-contrib-python pillow h5py pandas matplotlib && \
-    
+    pip3 install opencv-contrib-python pillow h5py pandas matplotlib
 
 CMD ["nvcc","--version"]
