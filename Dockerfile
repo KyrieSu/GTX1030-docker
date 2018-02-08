@@ -6,6 +6,7 @@ ENV cudnn cudnn-8.0-linux-x64-v6.0.tgz
 RUN apt-get update && \
     apt-get install -y sudo curl wget vim git software-properties-common && \
     apt-get install -y perl make build-essential pkg-config cmake g++ && \
+    apt-get install -y libglu1-mesa libxi-dev libxmu-dev libglu1-mesa-dev python3 python3-pip libsm6 libxrender1 libxext-dev && \
     # install nVidia driver
     add-apt-repository -y ppa:graphics-drivers/ppa && \
     apt-get update && \
@@ -23,8 +24,6 @@ RUN apt-get update && \
     chmod a+r /usr/local/cuda-8.0/lib64/libcudnn* && \
     echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64" >> ~/.bashrc && \
     source ~/.bashrc && \
-    # install python3.5
-    apt-get install -y libglu1-mesa libxi-dev libxmu-dev libglu1-mesa-dev python3 python3-pip libsm6 libxrender1 libxext-dev && \
     # install python package
     apt-get install -y python3 python3-pip && \
     pip3 install --upgrade pip && \
