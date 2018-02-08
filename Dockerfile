@@ -8,9 +8,9 @@ RUN apt-get update && \
     apt-get install -y perl make build-essential pkg-config cmake g++ && \
     # install nVidia driver
     add-apt-repository -y ppa:graphics-drivers/ppa && \
-    echo "83\n1\n" | apt install --no-install-recommends -y nvidia-390 nvidia-390-dev libcuda1-390 && \
     apt-get update && \
     apt-get -y upgrade && \
+    echo "83\n1\n" | apt install --no-install-recommends -y nvidia-390 nvidia-390-dev libcuda1-390 && \
     wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/$cuda && \
     chmod +x $cuda && \
     $cuda --silent --toolkit --samples && \
