@@ -23,9 +23,7 @@ RUN apt-get update && \
     cp -P cuda/lib64/libcudnn* /usr/local/cuda-8.0/lib64/ && \
     chmod a+r /usr/local/cuda-8.0/lib64/libcudnn* && \
     echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64" >> ~/.bashrc && \
-    source ~/.bashrc && \
     # install python package
-    apt-get install -y python3 python3-pip && \
     pip3 install --upgrade pip && \
     pip3 install tensorflow_gpu==1.4.1 && \
     pip3 install keras==2.1.2 && \
