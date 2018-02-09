@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
-ARG cuda=cuda_8.0.61_375.26_linux-run
-ARG cudnn=cudnn-8.0-linux-x64-v6.0.tgz
+ENV cuda cuda_8.0.61_375.26_linux-run
+ENV cudnn cudnn-8.0-linux-x64-v6.0.tgz
 
 RUN apt-get update && \
     apt-get install -y sudo curl wget vim git software-properties-common && \
